@@ -9,3 +9,5 @@ urlpatterns = [
     path('', contacts, name='contacts'),
     path('product/<int:pk>', product_ditail, name='product_ditail')
 ]
+
+
