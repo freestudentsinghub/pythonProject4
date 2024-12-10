@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product ditail</title>
-</head>
+{% extends 'base.html' %}
+{% block title %}Страница продукта{% endblock %}
+{% block content %}
 <body>
     <h1>Информация о продукте</h1>
     <p>Имя: {{ product_name }}</p>
@@ -15,4 +12,4 @@
     <p>Дата последнего изменения: {{ product_updated_at }}</p>
 
 </body>
-</html>
+{% endblock %}
