@@ -6,13 +6,13 @@
 </head>
 <body>
     <h1>Информация о продукте</h1>
-    <p>{{ product_name }}</p>
-    <p>{{ product_description }}</p>
-    <p>{{ product_image }}</p>
-    <p>{{ product_category }}</p>
-    <p>{{ product_cost }}</p>
-    <p>{{ product_created_at }}</p>
-    <p>{{ product_updated_at }}</p>
+    <p>Имя: {{ product_name }}</p>
+    <p>Описание: {{ product_description }}</p>
+    <p>Фото: <img src="/media/{{ product_image }}" alt="{{ product_image }}"></p>
+    <p>Категория: {{ product_category }}</p>
+    <p>Цена: {{ product_cost }}</p>
+    <p>Дата созданя: {{ product_created_at }}</p>
+    <p>Дата последнего изменения: {{ product_updated_at }}</p>
 
 </body>
 </html>
