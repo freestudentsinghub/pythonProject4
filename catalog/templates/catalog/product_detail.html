@@ -1,0 +1,15 @@
+{% extends 'catalog/base.html' %}
+{% block title %}Страница продукта{% endblock %}
+{% block content %}
+<body>
+    <h1>Информация о продукте</h1>
+    <p>Имя: {{ object.name }}</p>
+    <p>Описание: {{ object.description }}</p>
+    <p>Фото: <img src="/media/{{ object.image }}" alt="{{ object.image }}"></p>
+    <p>Категория: {{ object.category }}</p>
+    <p>Цена: {{ object.cost }}</p>
+    <p>Дата созданя: {{ object.created_at }}</p>
+    <p>Дата последнего изменения: {{ object.updated_at }}</p>
+
+</body>
+{% endblock %}
