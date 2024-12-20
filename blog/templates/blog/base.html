@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8"> <!--Кодировка -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skypro Homework</title> <!-- Заголовок -->
+    <title>Blog</title> <!-- Заголовок -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
 <body>
+<a class="btn btn-primary" href="{% url 'blog:blog_create' %}" role="button">Создать блог</a>
 
-{% include 'catalog/header.html' %}
+{% include 'blog/header.html' %}
 {% block content %}{% endblock %}
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
-                SkyStore
+                Блог
                 <small class="d-block mb-3 text-muted">&copy; 2023</small>
             </div>
             <div class="col-6 col-md">

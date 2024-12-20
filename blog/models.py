@@ -10,9 +10,8 @@ class Blog(models.Model):
     number_views = models.PositiveIntegerField(verbose_name="Количество просмотров", help_text="Укажите количество просмотров", default=0,)
 
     def __str__(self):
-        return f'{self.title} {self.content}'
+        return self.title
 
     class Meta:
-        verbose_name = "Статья"
-        verbose_name_plural = "Статьи"
-        ordering = ['title', 'content']
+        verbose_name = 'блог'
+        verbose_name_plural = 'блоги'
