@@ -6,7 +6,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Описание продукта', help_text='Введите описание продукта', blank=True)
     image = models.ImageField(upload_to='media/images', verbose_name='Фотография', help_text='Загрузите изображение продукта', blank=True)
     category = models.CharField(max_length=150, verbose_name='Название категории продукта', help_text='Введите название категории', blank=True)
-    cost = models.IntegerField(verbose_name='цена за покупку', help_text='Введите цену', blank=True)
+    cost = models.IntegerField(verbose_name='цена за покупку', help_text='Введите цену')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания', help_text='Введите дату создания', blank=True)
     updated_at = models.DateTimeField(auto_now=True, verbose_name='дата последнего изменения', help_text='Введите дату последнего обновления', blank=True, null=True)
 
