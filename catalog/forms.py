@@ -8,6 +8,35 @@ class ProductForm(ModelForm):
         model = Product
         fields = "__all__"
 
+
+    def __init__(self, *args, **kwargs):
+        super(ProductForm, self).__init__(*args, **kwargs)
+
+        self.fields['name'].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Введите наименование продукта"
+        })
+
+        self.fields['description'].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Введите описание продукта"
+        })
+
+        self.fields['image'].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Введите изображение продукта (необязательно)"
+        })
+
+        self.fields['category'].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Введите категорию продукта"
+        })
+
+        self.fields['cost'].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Введите цену продукта"
+        })
+
     banned_words = [
         'казино',
         'криптовалюта',
