@@ -74,3 +74,9 @@ class ProductForm(ModelForm):
             raise forms.ValidationError("Цена не может быть отрицательной.")
 
         return cost
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = "__all__"

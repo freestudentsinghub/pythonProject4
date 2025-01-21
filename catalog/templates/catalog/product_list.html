@@ -19,8 +19,14 @@
                                 <li>{{ product.updated_at }}</li>
                             </ul>
                             <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                            <a class="btn btn-primary" href="{% url 'catalog:product_ditail' product.pk %}" role="button">Посмотреть</a>
+                            {% if perms.catalog.can_unpublish_product or user == catalog.owner %}
+                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
+                            {% endif %}
+                            {% if perms.catalog.delete_product %}
+                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Удалить</a>
+                            {% endif %}
                         </div>
-
             </div>
         </div>
         {% endfor %}
