@@ -79,4 +79,4 @@ class ProductForm(ModelForm):
 class ProductModeratorForm(ModelForm):
     class Meta:
         model = Product
-        fields = "__all__"
+        fields = ["publication_status"]

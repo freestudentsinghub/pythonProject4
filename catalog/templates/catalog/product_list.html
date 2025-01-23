@@ -3,11 +3,9 @@
 {% block content %}
 <div class="container">
     <div class="row text-center">
-        <a class="btn btn-primary" href="{% url 'catalog:product_create' %}" role="button">Создать</a>
         {% for product in object_list %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
-
                 <div class="card-header">
                         <h4 class="my-0 font-weight-normal">{{ product.name }}</h4>
                         </div>
@@ -20,20 +18,17 @@
                                 <li>{{ product.updated_at }}</li>
                             </ul>
                             <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
-                            <a class="btn btn-primary" href="{% url 'catalog:product_ditail' product.pk %}" role="button">Посмотреть</a>
-                            {% if perms.catalog.can_unpublish_product or user == catalog.owner %}
-                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
-                            {% endif %}
-                            {% if perms.catalog.delete_product %}
-                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Удалить</a>
+                            {% if perms.catalog.can_unpublish_product %}
+                            <a class="btn btn-primary" href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить</a>
+                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Изменить статус публикации</a>
                             {% endif %}
                             {% if user == product.owner %}
                             <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать для владельца</a>
-                            <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Удалить для владельца</a>
+                            <a class="btn btn-primary" href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить для владельца</a>
                             {% endif %}
                         </div>
-            </div>
-        </div>
+                    </div>
+                </div>
         {% endfor %}
     </div>
 </div>
