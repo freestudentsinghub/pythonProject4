@@ -1,0 +1,17 @@
+{% extends 'catalog/base.html' %}
+{% block title %}Создать продукт{% endblock %}
+{% block content %}
+<h1>Продукты в категории "{{ category }}"</h1>
+
+    {% if object_list %}
+        <ul>
+            {% for product in object_list %}
+                <li>
+                    {{ product.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет продуктов в данной категории.</p>
+    {% endif %}
+{% endblock %}
