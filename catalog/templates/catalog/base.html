@@ -8,6 +8,12 @@
   </head>
 <body>
 <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog:product_list' %}">Список продуктов</a>
+    </li>
+    <li class="nav-item">
+        <a class="btn btn-primary" href="{% url 'catalog:product_create' %}" role="button">Создать продукт</a>
+    </li>
     {% if user.is_authenticated %}
         <li class="nav-item">
             <form method="post" action="{% url 'users:logout' %}" style="display: inline;">
